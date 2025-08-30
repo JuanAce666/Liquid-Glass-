@@ -1,0 +1,119 @@
+body {
+    background: url("https://cdna.artstation.com/p/assets/images/images/008/337/622/large/rebecca-jo-norman-109watermarked.jpg?1512089021")
+    center center;
+    animation: anim 120s linear infinite; /* más lento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ocupa toda la pantalla */
+    margin: 0;
+}
+
+@keyframes anim {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 0% -1500%;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: inline-flex;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    overflow: hidden;
+    box-shadow: 
+        0 6px 6px #00000033,
+        0 0 20px #0000001a;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+/* --- EFECTO LIQUID GLASS --- */
+.effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    backdrop-filter: blur(14px) saturate(180%) contrast(120%);
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+    border-radius: inherit;
+}
+
+.shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 
+        inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+        inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    border-radius: inherit;
+}
+
+/* reflejo especular radial */
+.shine::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 70%);
+    border-radius: inherit;
+}
+
+.text {
+    z-index: 3;
+    font-size: 2rem;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 2rem;
+    padding: 0.6rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    z-index: 3; /* para que quede sobre los efectos */
+}
+
+.dock,
+.dock > div {
+    border-radius: 2rem;
+}
+
+.dock:hover {
+    padding: 0.8rem;
+    border-radius: 2.5rem;
+}
+
+.dock:hover > div {
+    border-radius: 2.5rem;
+}
+
+.dock img {
+    width: 75px;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    cursor: pointer;
+}
+
+.dock img:hover {
+    transform: scale(1.1);
+}
