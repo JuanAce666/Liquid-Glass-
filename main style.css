@@ -1,11 +1,11 @@
 body {
     background: url("https://cdna.artstation.com/p/assets/images/images/008/337/622/large/rebecca-jo-norman-109watermarked.jpg?1512089021")
     center center;
-    animation: anim 120s linear infinite; /* más lento */
+    animation: anim 120s linear infinite; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* ocupa toda la pantalla */
+    height: 100vh; 
     margin: 0;
 }
 
@@ -31,7 +31,7 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
-/* --- EFECTO LIQUID GLASS --- */
+/* --- efecto del liquid --- */
 .effect {
     position: absolute;
     z-index: 0;
@@ -90,7 +90,7 @@ a {
     border-radius: 2rem;
     padding: 0.6rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-    z-index: 3; /* para que quede sobre los efectos */
+    z-index: 3; 
 }
 
 .dock,
